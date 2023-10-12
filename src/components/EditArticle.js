@@ -14,14 +14,14 @@ export default function EditArticle() {
 
     const editTheArticle = e =>{
         e.preventDefault()
-        const updatedArticle = {title: e.target.title.value, description: e.target.description.value}
-        editArticle(id, updatedArticle).then(()=> nav(`/${id}`))
+        const updatedArticle = {title: e.target.title.value, description: e.target.description.value, markdown: e.target.markdown.value}
+        editArticle(id, updatedArticle).then(()=> nav(`${id}`))
     }
   return (
     <div>
         <form onSubmit={editTheArticle}>
-            Title: <input type='text' name='title' defaultValue={data.title}/>
-            Description: <input type='text' name='description' defaultValue={data.description}/>
+            {/* Title: <input type='text' name='title' defaultValue={data.title}/> */}
+            Markdown: <input type='text' name='description' defaultValue={data.description}/>
             <input type='submit' />
         </form>
     </div>

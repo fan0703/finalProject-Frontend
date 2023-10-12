@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = 'http://localhost:5000'
+const baseURL = 'http://localhost:8000/articles'
 // const baseURL = 'http://yangfanhewangzheng:kyyMR6mAp7bi4p0w@cluster0.kyae0bq.mongodb.net'
 //show all
 export const getArticles = ()=>{

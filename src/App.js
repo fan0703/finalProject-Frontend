@@ -9,11 +9,11 @@ import EditArticle from './components/EditArticle';
 function App() {
   return (
     <div className="App">
-       Blog Articles
+      
       <Router>
         <Routes>
           <Route path='/' element={<Articles/>}/>
-          <Route path='/:id' element={<Article />} />
+          <Route path='/new' element={<Article />} />
           <Route path='/:id/edit' element={<EditArticle />} />
         </Routes>
       </Router>

@@ -2,7 +2,7 @@ import React from 'react'
 import { getArticles } from '../services/article-api'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Create from './CreatArticle'
+
 
 export default function Articles() {
 const apiKey = process.env.APIKEY
@@ -15,15 +15,23 @@ console.log(articles)
   return (
     <div>
         <>
+        <h1 className='Nav'>Articles List</h1>
+        {/* <a href='/new'>New Article</a> */}
+        
         {articles.map((article)=>{
             return(
-                <div>
-                   <h4>{article.title}</h4> 
+                <div className='title'>
+                   <a href='/new'>{article.title}</a> 
+                {/* <p {article.description}/> */}
+               {/* <input type='submit' name='submit' value='Edit' /> */}
+               <form action={`/:${article._id}?_method=DELETE`} method="POST">
+                        <input type='submit' value="DELETE"/>
+                    </form>
                 </div>
             )
-        })}
+        })} 
         </>
-        <Create />
+       
     </div>
   )
 }
